@@ -1,0 +1,41 @@
+[project]
+name = "swat"
+dynamic = ["version"]
+description = "Sliding Window Attention Training"
+readme = "README.md"
+authors = [
+    { name = "Anonymous", email = "anonymous@example.com" },
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.5",
+    "transformers>=4.53.0,<4.56.0",
+    "datasets>=3.3.0",
+    "einops",
+    "pytest",
+]
+
+[project.optional-dependencies]
+conv1d = ["causal-conv1d>=1.4.0"]
+benchmark = ["matplotlib"]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+
+[tool.isort]
+line_length = 127
+multi_line_output = 3
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+pythonpath = [
+  "."
+]
